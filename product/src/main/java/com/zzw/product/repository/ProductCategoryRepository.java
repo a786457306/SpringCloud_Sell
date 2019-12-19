@@ -2,6 +2,7 @@ package com.zzw.product.repository;
 
 import com.zzw.product.dataobject.ProductCategory;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -11,6 +12,8 @@ import java.util.List;
  * @author Daydreamer
  * @date 2019/12/19 16:56
  */
+
+@Repository
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory, String> {
 
     List<ProductCategory> findByCategoryTypeIn(List<Integer> categoryTypeList);
