@@ -1,0 +1,14 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka2:8762/eureka/
+#    register-with-eureka: false
+#  自我保护模式，某个一段时间未连上的应用也不会立刻删掉，宁可信其有，不可信其无
+#  关掉就防止服务真的挂了却被调用，造成调用失败
+  server:
+    enable-self-preservation: false
+spring:
+  application:
+    name: eureka
+server:
+  port: 8761
