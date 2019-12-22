@@ -15,3 +15,8 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/SpringCloud_Sell?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
   jpa:
     show-sql: true
+
+# 修改负载均衡算法，IRule接口的实现类
+PROJECT：
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadBalancer.RandomRule

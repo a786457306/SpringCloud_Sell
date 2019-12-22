@@ -18,4 +18,12 @@ public interface ProductService {
      * @return
      */
     List<ProductInfo> findUpstageAll();
+
+    /**
+     * 根据订单信息查询商品列表
+     *
+     * @param productIdList
+     * @return
+     */
+    List<ProductInfo> findProductListForOrder(List<String> productIdList);
 }

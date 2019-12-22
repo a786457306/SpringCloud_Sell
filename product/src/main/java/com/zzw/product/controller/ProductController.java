@@ -10,9 +10,7 @@ import com.zzw.product.vo.ProductVO;
 import com.zzw.product.vo.ResultVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,5 +69,16 @@ public class ProductController {
         resultVO.setCode(ResultEnum.SUCCESS.getCode());
         resultVO.setMsg(ResultEnum.SUCCESS.getMsg());
         return resultVO;
+    }
+
+    /**
+     * 根据订单信息获取商品列表
+     *
+     * @param productIdList
+     * @return
+     */
+    @PostMapping("/listProductForOrder")
+    public List<ProductInfo> listProductForOrder(@RequestBody List<String> productIdList) {
+        return productService.findProductListForOrder(productIdList);
     }
 }
