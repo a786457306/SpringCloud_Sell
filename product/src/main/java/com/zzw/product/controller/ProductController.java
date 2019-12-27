@@ -1,5 +1,6 @@
 package com.zzw.product.controller;
 
+import com.zzw.product.DTO.CartDTO;
 import com.zzw.product.dataobject.ProductCategory;
 import com.zzw.product.dataobject.ProductInfo;
 import com.zzw.product.enums.ResultEnum;
@@ -67,12 +68,12 @@ public class ProductController {
         ResultVO resultVO = new ResultVO<>();
         resultVO.setData(productVOList);
         resultVO.setCode(ResultEnum.SUCCESS.getCode());
-        resultVO.setMsg(ResultEnum.SUCCESS.getMsg());
+        resultVO.setMsg(ResultEnum.SUCCESS.getMessage());
         return resultVO;
     }
 
     /**
-     * 根据订单信息获取商品列表
+     * 根据订单信息获取商品列表（给订单服务用）
      *
      * @param productIdList
      * @return
@@ -80,5 +81,15 @@ public class ProductController {
     @PostMapping("/listProductForOrder")
     public List<ProductInfo> listProductForOrder(@RequestBody List<String> productIdList) {
         return productService.findProductListForOrder(productIdList);
+    }
+
+    /**
+     * 减库存
+     *
+     * @param cartDTOList
+     */
+    @PostMapping("/decreaseStock")
+    public void decreaseProductStock(@RequestBody List<CartDTO> cartDTOList) {
+        productService.decreaseStock(cartDTOList);
     }
 }

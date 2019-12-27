@@ -1,5 +1,6 @@
 package com.zzw.product.service;
 
+import com.zzw.product.DTO.CartDTO;
 import com.zzw.product.dataobject.ProductInfo;
 import org.springframework.stereotype.Service;
 
@@ -26,4 +27,11 @@ public interface ProductService {
      * @return
      */
     List<ProductInfo> findProductListForOrder(List<String> productIdList);
+
+    /**
+     * 扣库存
+     *
+     * @param cartDTOList
+     */
+    void decreaseStock(List<CartDTO> cartDTOList);
 }

@@ -25,7 +25,8 @@ public interface ProductClient {
     String productMsg();
 
     /**
-     * 根据订单获取商品列表，使用RequestBody就必须用PostMapping
+     * 根据订单获取商品列表
+     * 使用RequestBody就必须用PostMapping
      *
      * @param productIdList
      * @return
