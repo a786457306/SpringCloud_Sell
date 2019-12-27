@@ -1,6 +1,7 @@
 package com.zzw.order.client;
 
 import com.zzw.order.dataobject.ProductInfo;
+import com.zzw.order.dto.CartDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,4 +34,11 @@ public interface ProductClient {
      */
     @PostMapping("/product/listProductForOrder")
     List<ProductInfo> listProductForOrder(@RequestBody List<String> productIdList);
+
+    /**
+     * 扣库存
+     * @param cartDTOList
+     */
+    @PostMapping("/product/decreaseStock")
+    void decreaseStock(@RequestBody List<CartDTO> cartDTOList);
 }

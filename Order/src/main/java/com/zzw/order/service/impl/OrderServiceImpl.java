@@ -39,6 +39,10 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public OrderDTO createOrder(OrderDTO orderDTO) {
 
+        // 查询商品信息（调用商品服务）
+
+
+        // 订单入库
         OrderMaster orderMaster = new OrderMaster();
 
         orderDTO.setOrderId(KeyUtil.uniqueKeyGenerator());

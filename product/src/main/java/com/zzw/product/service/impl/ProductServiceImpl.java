@@ -1,6 +1,6 @@
 package com.zzw.product.service.impl;
 
-import com.zzw.product.DTO.CartDTO;
+import com.zzw.product.dto.CartDTO;
 import com.zzw.product.dataobject.ProductInfo;
 import com.zzw.product.enums.ProductStatusEnum;
 import com.zzw.product.enums.ResultEnum;

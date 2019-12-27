@@ -1,6 +1,6 @@
 package com.zzw.product.service;
 
-import com.zzw.product.DTO.CartDTO;
+import com.zzw.product.dto.CartDTO;
 import com.zzw.product.dataobject.ProductInfo;
 import org.junit.Assert;
 import org.junit.Test;

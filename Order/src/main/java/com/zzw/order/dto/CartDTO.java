@@ -1,7 +1,8 @@
-package com.zzw.product.DTO;
+package com.zzw.order.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author Daydreamer
@@ -10,6 +11,8 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
+// 没有无参构造方法，序列化会失败。加了前两个注解，就没有默认的无参构造方法了。
+@NoArgsConstructor
 public class CartDTO {
 
     /**
